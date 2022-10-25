@@ -16,7 +16,7 @@ const Courses = () => {
            <Container>
             <Row>
                 <Col lg={8}>
-                 
+
                 </Col>
                 <Col lg={4}>
                 <h3>Courses: {categories.length}</h3>

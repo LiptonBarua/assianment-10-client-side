@@ -1,9 +1,9 @@
 import React from 'react';
-
+import './Home.css'
 const Home = () => {
     return (
-        <div>
-            <h1>This is home page</h1>
+        <div className='home d-flex justify-content-center align-items-center'>
+            <h1>Importance of Computer in Modern life.</h1>
         </div>
     );
 };
