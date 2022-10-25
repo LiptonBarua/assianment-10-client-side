@@ -22,7 +22,7 @@ const Courses = () => {
                 <h3>Courses: {categories.length}</h3>
                     {
                         categories.map(categorie=><p key={categorie.id}>
-                            <Link>{categorie.courses_name}</Link>
+                            <Link to={`/categorie/${categorie.id}`}>{categorie.courses_name}</Link>
                         </p>)
                     }
                 </Col>
