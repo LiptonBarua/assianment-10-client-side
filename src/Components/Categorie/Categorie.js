@@ -2,6 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import './Categorie.css'
 
 const Categorie = () => {
     const [categories, setCategories] = useState([])
@@ -12,13 +13,15 @@ const Categorie = () => {
     }, [])
     
     return (
-        <div className='mt-10'>
+        <div className='my-10'>
              <h1>All Categorie</h1>
+            <div className='text-decoration-none categorie'>
                     {
                         categories.map(categorie=><p key={categorie.id}>
                             <Link to={`/categorie/${categorie.id}`}>{categorie.courses_name}</Link>
                         </p>)
                     }
+            </div>
         </div>
     );
 };

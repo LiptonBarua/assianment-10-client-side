@@ -4,9 +4,9 @@ import './App.css';
 import Blog from './Components/Blog';
 import Cards from './Components/Cards';
 import Courses from './Components/Courses';
+import Faq from './Components/Faq/Faq';
 import Home from './Components/Home/Home';
 import Main from './Components/Main';
-import Flog from './Flog';
 
 const router = createBrowserRouter([
   {
@@ -23,7 +23,7 @@ const router = createBrowserRouter([
         loader: ({params})=>fetch(`http://localhost:4000/categorie/${params.id}`)
       },
       {
-        path: '/flog', element: <Flog></Flog>
+        path: '/faq', element: <Faq></Faq>
       },
       {
         path: '/blog', element: <Blog></Blog>

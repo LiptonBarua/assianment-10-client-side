@@ -1,8 +1,9 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import { Outlet } from 'react-router-dom';
-import Categorie from './Categorie';
-import Header from './Header';
+import Categorie from './Categorie/Categorie';
+import Header from './Header/Header';
+
 
 
 const Main = () => {
@@ -11,10 +12,10 @@ const Main = () => {
             <Header></Header>
             <Container>
                 <Row>
-                    <Col lg={8}>
+                    <Col lg={8} sm={12}>
                       <Outlet></Outlet>
                     </Col>
-                    <Col lg={4}>
+                    <Col lg={4} sm={12}>
                       <Categorie></Categorie>
                     </Col>
                 </Row>
