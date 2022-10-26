@@ -9,14 +9,14 @@ import Header from './Header/Header';
 const Main = () => {
     return (
         <div>
-            <Header></Header>
+            <Header className='fixed-top'></Header>
             <Container>
-                <Row>
+                <Row className='flex flex-wrap-reverse relative'>
                     <Col lg={8} sm={12}>
                       <Outlet></Outlet>
                     </Col>
                     <Col lg={4} sm={12}>
-                      <Categorie></Categorie>
+                      <Categorie ></Categorie>
                     </Col>
                 </Row>
             </Container>

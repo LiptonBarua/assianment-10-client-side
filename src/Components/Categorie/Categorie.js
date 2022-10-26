@@ -13,9 +13,9 @@ const Categorie = () => {
     }, [])
     
     return (
-        <div className='my-10'>
-             <h1>All Categorie</h1>
-            <div className='text-decoration-none categorie'>
+        <div className='my-10 bg-info p-5 md:fixed rounded-5'>
+             <h1 className='py-2 bg-danger text-white px-3 text-center'>All Categorie</h1>
+            <div className='text-decoration-none categorie '>
                     {
                         categories.map(categorie=><p key={categorie.id}>
                             <Link to={`/categorie/${categorie.id}`}>{categorie.courses_name}</Link>

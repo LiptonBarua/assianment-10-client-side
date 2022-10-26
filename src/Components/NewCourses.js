@@ -3,9 +3,11 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
 
-const NewCards = ({card}) => {
-  const {title, image_url,details,id} = card;
+const NewCourses = ({course}) => {
+    const {title, image_url,details,id} = course;
     return (
+        <div>
+            
         <Card className='bg-light shadow-lg p-2 h-12' style={{ width: '18rem' }}>
         <Card.Img className='h-40' variant="top" src={image_url} />
         <Card.Body>
@@ -16,7 +18,8 @@ const NewCards = ({card}) => {
            </div>
         </Card.Body>
       </Card>
+        </div>
     );
 };
 
-export default NewCards;
+export default NewCourses;

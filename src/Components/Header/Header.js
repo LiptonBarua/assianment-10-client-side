@@ -3,12 +3,16 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom';
+import {FaReadme} from 'react-icons/fa';
 
 const Header = () => {
     return (
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
         <Container>
-          <Navbar.Brand className='text-3xl' href="#home">Computer Learning</Navbar.Brand>
+          <div className='d-flex align-items-center'>
+          <h2 className='text-white '><FaReadme/></h2>
+          <h2 className='text-white ml-3'>Computer Learning</h2>
+          </div>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
