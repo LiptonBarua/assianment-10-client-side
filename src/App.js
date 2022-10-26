@@ -1,10 +1,12 @@
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
-import Categorie from './Components/Categorie';
+import Blog from './Components/Blog';
+import Cards from './Components/Cards';
 import Courses from './Components/Courses';
 import Home from './Components/Home/Home';
 import Main from './Components/Main';
+import Flog from './Flog';
 
 const router = createBrowserRouter([
   {
@@ -17,8 +19,14 @@ const router = createBrowserRouter([
       },
       {
         path: '/categorie/:id',
-        element: <Categorie></Categorie>,
+        element: <Cards></Cards>,
         loader: ({params})=>fetch(`http://localhost:4000/categorie/${params.id}`)
+      },
+      {
+        path: '/flog', element: <Flog></Flog>
+      },
+      {
+        path: '/blog', element: <Blog></Blog>
       }
     ]
   }

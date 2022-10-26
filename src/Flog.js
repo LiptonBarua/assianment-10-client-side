@@ -1,12 +1,11 @@
 import React from 'react';
 
-
-export const Courses = () => {
+const Flog = () => {
     return (
         <div>
-           
+            
         </div>
     );
 };
 
-export default Courses;
+export default Flog;

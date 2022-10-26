@@ -1,16 +1,24 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
-import NewCards from './NewCards';
+import { useState } from 'react';
+import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
-
-const Categorie = ({card}) => {
-    const allCards = useLoaderData();
+const Categorie = () => {
+    const [categories, setCategories] = useState([])
+    useEffect(()=>{
+        fetch('http://localhost:4000/categories-list')
+        .then(res=>res.json())
+        .then(data=>setCategories(data))
+    }, [])
+    
     return (
-        <div>
-            <h1>card: {allCards.length}</h1>
-           {
-            allCards.map(card=> <NewCards key={card.id} card={card}></NewCards>)
-           }
+        <div className='mt-10'>
+             <h1>All Categorie</h1>
+                    {
+                        categories.map(categorie=><p key={categorie.id}>
+                            <Link to={`/categorie/${categorie.id}`}>{categorie.courses_name}</Link>
+                        </p>)
+                    }
         </div>
     );
 };
