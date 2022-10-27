@@ -8,7 +8,7 @@ import Courses from './Components/Courses';
 import Faq from './Components/Faq/Faq';
 import Home from './Components/Home/Home';
 import Main from './Components/Main';
-import Button from 'react-bootstrap/Button';
+import { Toaster } from 'react-hot-toast';
 import Login from './Components/Login/Login';
 import Register from './Components/Register/Register';
 
@@ -52,6 +52,7 @@ function App() {
   return (
     <div>
       <RouterProvider router={router}></RouterProvider>
+       <Toaster></Toaster>
     </div>
   );
 }

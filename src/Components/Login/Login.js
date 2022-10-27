@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react';
+import { Toast } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Link, useNavigate } from 'react-router-dom';
@@ -28,7 +29,7 @@ const Login = () => {
         //   navigate(from, {replace: true});
          }
        else{
-        // toast.error('your email is not verify')
+        Toast.error('your email is not verify')
        }
        })
        .catch(error=>{
