@@ -11,6 +11,7 @@ import Main from './Components/Main';
 import { Toaster } from 'react-hot-toast';
 import Login from './Components/Login/Login';
 import Register from './Components/Register/Register';
+import PrivateRouter from './Components/PrivateRouter/PrivateRouter';
 
 const router = createBrowserRouter([
   {
@@ -20,23 +21,23 @@ const router = createBrowserRouter([
       },
       {
         path: '/courses',
-        element: <Courses></Courses>,
+        element: <PrivateRouter><Courses></Courses></PrivateRouter>,
         loader: ()=>fetch('http://localhost:4000/courses')
       },
       {
         path: '/categorie/:id',
-        element: <Cards></Cards>,
+        element: <PrivateRouter><Cards></Cards></PrivateRouter>,
         loader: ({params})=>fetch(`http://localhost:4000/categorie/${params.id}`)
       },
       {
-        path: '/faq', element: <Faq></Faq>
+        path: '/faq', element: <PrivateRouter><Faq></Faq></PrivateRouter>
       },
       {
-        path: '/blog', element: <Blog></Blog>
+        path: '/blog', element: <PrivateRouter><Blog></Blog></PrivateRouter>
       },
       {
         path: '/courses/:id', 
-        element: <CardDetails></CardDetails>,
+        element: <PrivateRouter><CardDetails></CardDetails></PrivateRouter>,
         loader: ({params})=> fetch(`http://localhost:4000/courses/${params.id}`)
       },
       { 
@@ -46,7 +47,9 @@ const router = createBrowserRouter([
         path: '/register', element: <Register></Register>
       }
     ]
-  }
+
+  },
+  {path: '*', element: <h1 className='text-center'>This is a not found: 404</h1>}
 ])
 function App() {
   return (

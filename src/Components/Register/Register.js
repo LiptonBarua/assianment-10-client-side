@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import { AuthContext } from '../Context/AuthProvider';
 import './Register.css'
-import { Toast } from 'react-bootstrap';
 
 
 
@@ -34,7 +33,7 @@ const Register = () => {
               setError('');
               handleUpdateProfile(name, photoURL)
               handleVerificationEmail();
-              Toast.success('Please your email verify');
+              alert('Please your email verify');
               console.log(user)
               
           })
