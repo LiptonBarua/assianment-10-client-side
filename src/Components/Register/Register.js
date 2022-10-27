@@ -97,14 +97,14 @@ const Register = () => {
           <Form.Control name='password' type="password" placeholder="Password" required/>
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicCheckbox">
-          <Form.Check onClick={handleAccepted} type="checkbox" label={<>Accept <Link to='/login'>Login</Link> </>}  />
+          <h5><Form.Check onClick={handleAccepted} type="checkbox" label={<>Accept <Link className='text-decoration-none' to='/login'>Login</Link> </>}  /></h5>
         </Form.Group>
         <Form.Text className="text-muted">
              {error}
           </Form.Text><br/>
            
           <div className='text-center'>
-          <Button className='px-5 ' variant="primary" type="submit" disabled={!accepted}>
+          <Button className='px-5 ' variant="danger" type="submit" disabled={!accepted}>
           Register 
         </Button> <br/>
           <div className='flex items-center justify-center'>

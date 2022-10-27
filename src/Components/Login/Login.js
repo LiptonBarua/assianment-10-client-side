@@ -55,7 +55,7 @@ const Login = () => {
         <Form.Control name='password' type="password" placeholder="Password" required />
       </Form.Group>
       <Form.Group className="mb-3" controlId="formBasicCheckbox">
-      <Form.Check onClick={handleAccepted} type="checkbox" label={<>Accept <Link to='/Register'>Login</Link> </>}  />
+      <h5><Form.Check onClick={handleAccepted} type="checkbox" label={<>Accept <Link className='text-decoration-none' to='/Register'>Register</Link> </>}  /></h5>
       </Form.Group>
       <Form.Text className="text-danger">
          {error}
