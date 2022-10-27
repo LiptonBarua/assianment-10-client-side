@@ -2,7 +2,7 @@ import React from 'react';
 
 const Blog = () => {
     return (
-        <div className='bg-info my-5 p-5 rounded-5'>
+        <div className='bg-primary my-5 p-5 rounded-5'>
             <h1>1: what is cors</h1>
             <p className='text-justify'><span className='bg-danger text-white me-1 px-1'>Ans:</span> Cross-origin resource sharing is a mechanism that allows restricted resources on a web page to be requested from another domain outside the domain from which the first resource was served. A web page may freely embed cross-origin images, stylesheets, scripts, iframes, and videos.</p>
 

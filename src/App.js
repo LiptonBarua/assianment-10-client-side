@@ -8,6 +8,7 @@ import Courses from './Components/Courses';
 import Faq from './Components/Faq/Faq';
 import Home from './Components/Home/Home';
 import Main from './Components/Main';
+import Button from 'react-bootstrap/Button';
 
 const router = createBrowserRouter([
   {

@@ -13,7 +13,7 @@ const Categorie = () => {
     }, [])
     
     return (
-        <div className='my-10 bg-info p-5 md:fixed rounded-5'>
+        <div className='my-10 bg-primary p-5 md:fixed rounded-5'>
              <h1 className='py-2 bg-danger text-white px-3 text-center'>All Categorie</h1>
             <div className='text-decoration-none categorie '>
                     {
