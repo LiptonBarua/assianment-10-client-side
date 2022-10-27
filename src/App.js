@@ -9,6 +9,8 @@ import Faq from './Components/Faq/Faq';
 import Home from './Components/Home/Home';
 import Main from './Components/Main';
 import Button from 'react-bootstrap/Button';
+import Login from './Components/Login/Login';
+import Register from './Components/Register/Register';
 
 const router = createBrowserRouter([
   {
@@ -36,6 +38,12 @@ const router = createBrowserRouter([
         path: '/courses/:id', 
         element: <CardDetails></CardDetails>,
         loader: ({params})=> fetch(`http://localhost:4000/courses/${params.id}`)
+      },
+      { 
+        path: '/login', element: <Login></Login>
+      },
+      {
+        path: '/register', element: <Register></Register>
       }
     ]
   }

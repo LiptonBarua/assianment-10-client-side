@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
 const CardDetails = () => {
+
     const cardDetails = useLoaderData();
     const {title, image_url,details,courses_name} = cardDetails;
     console.log(cardDetails)
