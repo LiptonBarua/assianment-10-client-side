@@ -1,4 +1,4 @@
-import { GoogleAuthProvider } from 'firebase/auth';
+import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
@@ -12,8 +12,12 @@ import './Register.css'
 const Register = () => {
     const [error, setError]= useState('');
     const [accepted, setAccepted] = useState(false);
-    const googleProvider = new GoogleAuthProvider()
-      const{createUser, updateUserProfile, verifyEmail, providerLogin}=useContext(AuthContext);
+
+
+    const googleProvider = new GoogleAuthProvider();
+    const githubProvider = new GithubAuthProvider();
+    
+      const{createUser, updateUserProfile, verifyEmail, providerLogin, github}=useContext(AuthContext);
       const handleSubmit=(event)=>{
           event.preventDefault()
           const form = event.target;
@@ -42,6 +46,14 @@ const Register = () => {
         providerLogin(googleProvider)
         .then(result=>{
           const user = result.user;
+        })
+        .catch(error=>console.error(error))
+      }
+
+      const handleGithubLogin=()=>{
+        github(githubProvider)
+        .then(result=>{
+            const user = result.user;
         })
         .catch(error=>console.error(error))
       }
@@ -85,18 +97,20 @@ const Register = () => {
           <Form.Control name='password' type="password" placeholder="Password" required/>
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicCheckbox">
-          <Form.Check onClick={handleAccepted} type="checkbox" label={<>Accept <Link to='/terms'>Trems and Condition</Link> </>}  />
+          <Form.Check onClick={handleAccepted} type="checkbox" label={<>Accept <Link to='/login'>Login</Link> </>}  />
         </Form.Group>
         <Form.Text className="text-muted">
              {error}
           </Form.Text><br/>
            
           <div className='text-center'>
-          <Button className='submit' variant="primary" type="submit" disabled={!accepted}>
-          Submit
+          <Button className='px-5 ' variant="primary" type="submit" disabled={!accepted}>
+          Register 
         </Button> <br/>
-        <Button onClick={handleLogin} variant="bg-info mb-2 px-16"><FaGoogle></FaGoogle></Button><br/>
-        <Button variant="bg-success mb-4"><FaGithub></FaGithub> </Button>
+          <div className='flex items-center justify-center'>
+          <Button className=' bg-info text-8xl roundedCircle mt-2 text-danger' onClick={handleLogin} variant="bg-info mb-2 px-16"><FaGoogle></FaGoogle></Button><br/>
+         <Button onClick={handleGithubLogin} variant="roundedCircle bg-info text-8xl m-3 rounded-full text-danger"><FaGithub></FaGithub> </Button>
+          </div>
           </div>
       </Form>
     );

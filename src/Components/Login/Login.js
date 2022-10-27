@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Context/AuthProvider';
 const Login = () => {
     const [error, setError]= useState();
@@ -55,13 +55,13 @@ const Login = () => {
         <Form.Control name='password' type="password" placeholder="Password" required />
       </Form.Group>
       <Form.Group className="mb-3" controlId="formBasicCheckbox">
-        <Form.Check onClick={handleAccepted} type="checkbox" label="Check me out" />
+      <Form.Check onClick={handleAccepted} type="checkbox" label={<>Accept <Link to='/Register'>Login</Link> </>}  />
       </Form.Group>
       <Form.Text className="text-danger">
          {error}
         </Form.Text><br/>
       <Button variant="danger" type="submit" disabled={!accepted}>
-        Submit
+        Login
       </Button>
     </Form>
         </div>

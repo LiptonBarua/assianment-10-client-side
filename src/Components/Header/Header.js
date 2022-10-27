@@ -37,36 +37,34 @@ const Header = () => {
               <Link className='mx-4 text-xl text-decoration-none text-light' to='/courses'>Courses</Link>
               <Link className='mx-4 text-xl text-decoration-none text-light' to='/faq'>FAQ</Link>
               <Link className='mx-4 text-xl text-decoration-none text-light' to='/blog'>Blog</Link>
-             
-              <Link className='text-light' to='/public'>
+            
+              
+            </Nav>
+            <Nav>
+            <Nav.Link href="#deets" className='text-white'>
+            {
+              user?.uid?
+              <div>
+                 <Button className='mx-4' onClick={handleLogOut} variant="primary rounded-2">Log Out</Button>
+                 {user?.displayName}
+                 
+              </div> :
+              <>
+              <Link className='bg-primary rounded-2 mx-2 text-white p-2 text-decoration-none' to='/login'>Login</Link>
+              <Link className='bg-primary rounded-2 mx-2 text-white p-2 text-decoration-none' to='/register'>Register</Link>
+              </>
+            }
+            
+            </Nav.Link >
+            <Link className='md: flex items-center'>
              {user?.photoURL?
              <Image style={{height: '30px'}} roundedCircle src={user.photoURL}></Image> : <FaUser></FaUser>
             }
             </Link>
-              {
-              user?.uid?
-              <>
-                 {user?.displayName}
-                 <Button className='ms-3' onClick={handleLogOut} variant="danger">Log Out</Button>
-              </> :
-              <>
-               <Link className='mx-4 text-xl text-decoration-none text-light' to='/login'>Login</Link>
-              <Link className='mx-4 text-xl text-decoration-none text-light' to='/register'>Register</Link>
-              </>
-            }
-            </Nav>
-            <Nav>
-             
-              <Nav.Link href="#deets">
-          
-              </Nav.Link>
-              <Nav.Link eventKey={2} href="#memes">
-           
-              </Nav.Link>
-              <div className='dark: bg-black'>
+          </Nav>
+            <div className='dark: bg-black ms-4'>
               <Button onClick={handleDarkMode} variant="success">Dark Mode</Button>
               </div>
-            </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>

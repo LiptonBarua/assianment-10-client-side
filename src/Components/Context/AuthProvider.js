@@ -23,6 +23,10 @@ const signIn =(email, password)=>{
 const providerLogin=(provider)=>{
    return signInWithPopup(auth, provider)
 };
+
+const github=(provider)=>{
+ return signInWithPopup(auth, provider)
+}
 const logout =()=>{
   return signOut(auth)
 };
@@ -37,7 +41,7 @@ useEffect(()=>{
 })
 
 
-const authInfo = {user, createUser, signIn, logout, providerLogin}
+const authInfo = {user, createUser, signIn, logout, providerLogin, github}
  return (
   <AuthContext.Provider value={authInfo}>
   {children}
